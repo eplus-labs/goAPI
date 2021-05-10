@@ -40,6 +40,8 @@ func Get(c *gin.Context) {
 
 	sliceOfVideoStruct := videoStruct[len(videoStruct)-5:]
 
+	fmt.Println("slice of video struct: ", sliceOfVideoStruct)
+
 	videoMarshalled, _ := json.Marshal(sliceOfVideoStruct)
 
 	// videoMarshalled, _ := json.Marshal(videoStruct)
