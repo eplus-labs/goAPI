@@ -96,8 +96,6 @@ func Save(video VideoFromUser) VideoToDB {
 		fmt.Println(err)
 	}
 
-	fmt.Println("video from within dao: ", videoToDB)
-
 	return videoToDB
 
 }
@@ -119,8 +117,6 @@ func Get(video *VideoFromUser) []VideoFromUser {
 
 		sliceOfVideos = append(sliceOfVideos, *video)
 	}
-
-	fmt.Printf("slice of video struct from DB query %s", sliceOfVideos)
 
 	return sliceOfVideos
 }
@@ -162,6 +158,5 @@ func CreateVideo(videoFromUser VideoFromUser) *VideoToDB {
 	videoToDB.Title = YoutubeVideoResponse1.Items[0].Snippet.Title
 	videoToDB.Thumbnail = YoutubeVideoResponse1.Items[0].Snippet.Thumbnails.Medium.URL
 
-	fmt.Println("video struct from video service: ", videoToDB)
 	return &videoToDB
 }
