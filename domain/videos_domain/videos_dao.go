@@ -90,7 +90,7 @@ func Save(video VideoFromUser) VideoToDB {
 
 	insertResult, saveErr := stmt.Exec(videoToDB.Name, dbTime, videoToDB.Category, videoToDB.EmbedID, videoToDB.Thumbnail, videoToDB.Title)
 	if saveErr != nil {
-		fmt.Println(err)
+		fmt.Println(saveErr)
 	}
 
 	_, err = insertResult.LastInsertId()
