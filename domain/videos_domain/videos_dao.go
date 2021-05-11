@@ -151,6 +151,8 @@ func CreateVideo(videoFromUser VideoFromUser) *VideoToDB {
 
 	json.Unmarshal(body, &YoutubeVideoResponse1)
 
+	fmt.Println("Within CreateVideo - YoutubeVideoResponse1: ", YoutubeVideoResponse1)
+
 	// retrurn to videoFromUser.EmbedID (ie) when testing complete
 	videoToDB.EmbedID = videoFromUser.EmbedID
 	videoToDB.Name = videoFromUser.Name
