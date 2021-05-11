@@ -86,6 +86,8 @@ func Save(video VideoFromUser) VideoToDB {
 
 	videoToDB = *CreateVideo(video)
 
+	fmt.Println("Video to DB variable in Save function: ", videoToDB)
+
 	insertResult, saveErr := stmt.Exec(videoToDB.Name, dbTime, videoToDB.Category, videoToDB.EmbedID, videoToDB.Thumbnail, videoToDB.Title)
 	if saveErr != nil {
 		fmt.Println(err)
