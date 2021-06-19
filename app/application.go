@@ -18,5 +18,7 @@ func StartApplication() {
 
 	router.Use(cors.Default())
 
-	router.Run(":8080")
+	// router.Run(":8080")
+	router.RunTLS(":8080", "/Users/scarruthers/go/src/illuminate_crypto_api/app/example.crt", "/Users/scarruthers/go/src/illuminate_crypto_api/app/example.key")
+
 }
